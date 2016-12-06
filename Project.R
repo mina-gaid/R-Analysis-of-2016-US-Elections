@@ -5,9 +5,13 @@ setwd("C:\\Users\\Mina\\Desktop\\Data Project")
 primaries <- read.csv("primaries.csv", header = TRUE, as.is = TRUE)
 election <- read.csv("election.csv", header = TRUE, as.is = TRUE)
 
+# Overview of datasets
+str(primaries)
+str(election)
+
 # Summary of datasets
-primaries
-election
+summary(primaries)
+summary(election)
 
 # R reads the % as strings - this will change the strings into numbers without the percentage symbol
 primaries$Donald.Trump = as.numeric(sub("%", "", primaries$Donald.Trump))
@@ -45,11 +49,11 @@ td <- as.numeric(gsub('%','',Trump_primaries[,"Donald.Trump"])) - as.numeric(gsu
 tdsq <- td^2
 
 # Calculating the sum of td and tdsq
-std <- sum(td) # Was not intended but keeping the name
+std <- sum(td)
 stdsq <- sum(tdsq)
 
 # Finding N of tdsq
-tn <- nrow(tdsq)
+tn <- NROW(tdsq) # The NROW() function is being used instead of nrow() because the object is a vectoer
 
 # Getting Degree of freedom | Subtracting 1 from n - storing value in tn1
 tdf <- tn - 1
@@ -83,7 +87,7 @@ shd <- sum(hd)
 shdsq <- sum(hdsq)
 
 # Finding N of tdsq
-hn <- nrow(hdsq)
+hn <- NROW(hdsq) # The NROW() function is being used instead of nrow() because the object is a vectoer
 
 # Getting Degree of freedom | Subtracting 1 from n - storing value in hn1
 hdf <- hn - 1
@@ -98,4 +102,4 @@ hcal2 <- hcal1 / hdf
 hcal2_sqrt <- sqrt(hcal2)
 
 # Dividing the sum of hd with previous result and storing the value in object 
-hillary_tstat <- hd / hcal2_sqrt
+hillary_tstat <- shd / hcal2_sqrt
