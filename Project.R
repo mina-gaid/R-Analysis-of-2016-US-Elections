@@ -70,6 +70,9 @@ tcal2_sqrt <- sqrt(tcal2)
 # Dividing the sum of td with previous result and storing the value in object 
 trump_tstat <- std / tcal2_sqrt
 
+# Correlation result
+cor.test(Trump_primaries[,"Donald.Trump"], Trump_election[,"Donald.Trump"])
+
 # Hillary (paired) t-test ------------------------------------------------------------------------
 
 # Plotting Hillary's primary and election results
@@ -103,3 +106,6 @@ hcal2_sqrt <- sqrt(hcal2)
 
 # Dividing the sum of hd with previous result and storing the value in object 
 hillary_tstat <- shd / hcal2_sqrt
+
+# Correlation result
+cor.test(Hillary_primaries[,"Hillary.Clinton"], Hillary_election[,"Hillary.Clinton"])
