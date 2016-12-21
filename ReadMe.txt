@@ -2,8 +2,6 @@ Run the data in RStudio by selecting Project.R
 
 It is adivsed you clear the workspace, select all and run to see the results
 
-Please ignore git files in folder - Github was used for version controle 
-
 (Note that results for mapreduce is outputed as null because of % in datasets)
 
 Running Mapper and Reducer on the election dataset
