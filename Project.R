@@ -38,6 +38,9 @@ x <- 0.05
 
 # Trump (paired) t-test ------------------------------------------------------------------------
 
+# Variance
+var(Trump_primaries, Trump_election)
+
 # Plotting Trump's primary and election results
 plot(Trump_primaries)
 plot(Trump_election)
@@ -70,10 +73,20 @@ tcal2_sqrt <- sqrt(tcal2)
 # Dividing the sum of td with previous result and storing the value in object 
 trump_tstat <- std / tcal2_sqrt
 
+# Rounding the result
+round(trump_tstat)
+ceiling(trump_tstat)
+
+# R t-test
+t.test(Trump_primaries, Trump_election)
+
 # Correlation result
 cor.test(Trump_primaries[,"Donald.Trump"], Trump_election[,"Donald.Trump"])
 
 # Hillary (paired) t-test ------------------------------------------------------------------------
+
+# Variance
+var(Hillary_primaries, Hillary_election)
 
 # Plotting Hillary's primary and election results
 plot(Hillary_primaries)
@@ -106,6 +119,13 @@ hcal2_sqrt <- sqrt(hcal2)
 
 # Dividing the sum of hd with previous result and storing the value in object 
 hillary_tstat <- shd / hcal2_sqrt
+
+# Rounding the result
+round(hillary_tstat)
+ceiling(hillary_tstat)
+
+# R t-test
+t.test(Hillary_primaries, Hillary_election)
 
 # Correlation result
 cor.test(Hillary_primaries[,"Hillary.Clinton"], Hillary_election[,"Hillary.Clinton"])
